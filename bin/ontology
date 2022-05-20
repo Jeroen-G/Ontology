@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+$autoload = getcwd() . '/vendor/autoload.php';
+$configuratorFile = getcwd() . '/ontology.php';
+
+if (!file_exists($configuratorFile)) {
+    $configuratorFile = __DIR__ . '/../config/configurator.php';
+}
+
+require $autoload;
+
+$application = new Symfony\Component\Console\Application();
+
+/** @var JeroenG\Ontology\Application\ConfigurationConfigurator $configurator */
+$configurator = (require $configuratorFile)(new JeroenG\Ontology\Application\ConfigurationConfigurator());
+
+$configuration = $configurator->configure();
+$fileCollector = $configurator->getFileCollector();
+
+$application->addCommands([
+    new JeroenG\Ontology\Infrastructure\Console\ValidateCommand($fileCollector, $configuration),
+    new JeroenG\Ontology\Infrastructure\Console\GenerateCommand($fileCollector, $configuration, $configurator->getFilesystemAdapter()),
+]);
+
+$application->run();
