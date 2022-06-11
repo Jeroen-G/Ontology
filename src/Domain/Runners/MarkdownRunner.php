@@ -45,6 +45,6 @@ final class MarkdownRunner implements GeneratorRunnerInterface
     /** @return GeneratorInterface[] */
     private function getGeneratorsForType(string $type): array
     {
-        return array_filter($this->generators, fn(GeneratorInterface $g) => $g->supports($type));
+        return array_filter($this->generators, fn (GeneratorInterface $g) => $g->supports($type));
     }
 }

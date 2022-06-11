@@ -24,7 +24,7 @@ final class ValidatorRegistry
     {
         $matches = array_filter(
             $this->validators,
-            fn($v) => in_array($v, $keys, true),
+            fn ($v) => in_array($v, $keys, true),
             ARRAY_FILTER_USE_KEY
         );
 
@@ -65,7 +65,6 @@ final class ValidatorRegistry
         foreach ($array as $item) {
             if (!is_array($item)) {
                 $result[] = $item;
-
             } else {
                 $values = self::flatten($item);
 

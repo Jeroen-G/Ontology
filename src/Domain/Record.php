@@ -11,7 +11,7 @@ final class Record
     public function __construct(
         public string $name,
         public ReflectionClass $reflectionClass,
-    ){
+    ) {
     }
 
     public function getAttributes(): array

@@ -18,6 +18,8 @@ $configurator = (require $configuratorFile)(new JeroenG\Ontology\Application\Con
 $configuration = $configurator->configure();
 $fileCollector = $configurator->getFileCollector();
 
+$application->setName('Ontology: Explain your domain with PHP Attributes');
+
 $application->addCommands([
     new JeroenG\Ontology\Infrastructure\Console\ValidateCommand($fileCollector, $configuration),
     new JeroenG\Ontology\Infrastructure\Console\GenerateCommand($fileCollector, $configuration, $configurator->getFilesystemAdapter()),

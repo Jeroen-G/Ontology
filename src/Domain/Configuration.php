@@ -61,7 +61,7 @@ final class Configuration
 
     private function inLayers(string $namespace, array $layers): bool
     {
-        $filtered = array_filter($layers, fn($layer) => str_contains($namespace, $layer));
+        $filtered = array_filter($layers, fn ($layer) => str_contains($namespace, $layer));
         return count($filtered) > 0;
     }
 }

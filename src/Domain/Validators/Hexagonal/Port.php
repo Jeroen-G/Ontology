@@ -9,14 +9,12 @@ use JeroenG\Ontology\Domain\Configuration;
 use JeroenG\Ontology\Domain\Record;
 use JeroenG\Ontology\Domain\Validators\ConfigurableInterface;
 use JeroenG\Ontology\Domain\Validators\ValidatorInterface;
-use Roave\BetterReflection\BetterReflection;
-use Roave\BetterReflection\Reflection\ReflectionClass;
 
 final class Port implements ValidatorInterface, ConfigurableInterface
 {
     public function __construct(
         private Configuration $configuration,
-    ){
+    ) {
     }
 
     public function supports(string $type): bool
@@ -33,7 +31,7 @@ final class Port implements ValidatorInterface, ConfigurableInterface
             return false;
         }
 
-        if(!$this->configuration->isDomainLayer($namespace)) {
+        if (!$this->configuration->isDomainLayer($namespace)) {
             return false;
         }
 

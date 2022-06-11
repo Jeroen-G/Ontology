@@ -10,20 +10,21 @@ use PhpCsFixer\Fixer\FunctionNotation\ReturnTypeDeclarationFixer;
 use PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer;
 use PhpCsFixer\Fixer\Strict\StrictComparisonFixer;
 use PhpCsFixer\Fixer\Strict\StrictParamFixer;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(DeclareStrictTypesFixer::class);
-    $services->set(StrictComparisonFixer::class);
-    $services->set(StrictParamFixer::class);
-    $services->set(ReturnTypeDeclarationFixer::class);
-    $services->set(AssignmentInConditionSniff::class);
-    $services->set(MbStrFunctionsFixer::class);
-    $services->set(OrderedClassElementsFixer::class);
-    $services->set(ClassAttributesSeparationFixer::class);
-
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set('sets', ['clean-code', 'psr12']);
-    $parameters->set('exclude_files', ['node_modules/*', 'vendor/*', 'docs/*']);
+return static function (ECSConfig $config): void {
+    $config->sets([SetList::PSR_12, SetList::CLEAN_CODE]);
+    $config->skip(['node_modules/*', 'vendor/*', 'docs/*']);
+    $config->paths([__DIR__ . '/../']);
+    $config->rules([
+        DeclareStrictTypesFixer::class,
+        StrictComparisonFixer::class,
+        StrictParamFixer::class,
+        ReturnTypeDeclarationFixer::class,
+        AssignmentInConditionSniff::class,
+        MbStrFunctionsFixer::class,
+        OrderedClassElementsFixer::class,
+        ClassAttributesSeparationFixer::class,
+    ]);
 };

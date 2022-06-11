@@ -6,7 +6,7 @@ namespace JeroenG\Ontology\Infrastructure\Filesystem;
 
 use JeroenG\Ontology\Application\FilesystemInterface;
 use JeroenG\Ontology\Domain\Filesystem\Directory;
-use League\Flysystem\FilesystemInterface as FlysystemInterface;
+use League\Flysystem\FilesystemOperator as FlysystemInterface;
 
 final class Filesystem implements FilesystemInterface
 {
@@ -19,7 +19,7 @@ final class Filesystem implements FilesystemInterface
     public function save(Directory $directory): void
     {
         foreach ($directory->getFiles() as $file) {
-            $path = $this->root.'/'.$directory->getName().'/'.$file->getName();
+            $path = $this->root . '/' . $directory->getName() . '/' . $file->getName();
 
             if ($this->flysystem->has($path)) {
                 $this->flysystem->delete($path);

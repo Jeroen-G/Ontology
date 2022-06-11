@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace JeroenG\Ontology\Domain\Validators\Hexagonal;
 
-use JeroenG\Ontology\Domain\Attributes\Adapter as AdapterAttribute;
-use JeroenG\Ontology\Domain\Attributes\Port as PortAttribute;
 use JeroenG\Ontology\Domain\Attributes\Repository as RepositoryAttribute;
 use JeroenG\Ontology\Domain\Configuration;
 use JeroenG\Ontology\Domain\Record;
@@ -18,7 +16,7 @@ final class Repository implements ValidatorInterface, ConfigurableInterface
 
     public function __construct(
         private Configuration $configuration,
-    ){
+    ) {
     }
 
     public function supports(string $type): bool
@@ -30,7 +28,7 @@ final class Repository implements ValidatorInterface, ConfigurableInterface
     {
         $reflectionClass = $record->reflectionClass;
 
-        if($reflectionClass->isInterface()) {
+        if ($reflectionClass->isInterface()) {
             $validator = (new Port($this->configuration));
         } else {
             $validator = (new Adapter($this->configuration));

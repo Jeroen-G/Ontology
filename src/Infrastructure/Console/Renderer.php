@@ -10,7 +10,7 @@ final class Renderer
 {
     public function __construct(
         private bool $rawOutput = false
-    ){
+    ) {
     }
 
     public function title(string $message): void
@@ -25,7 +25,7 @@ final class Renderer
 
     public function error(string $title, array $messages): void
     {
-        $map = array_map(fn(string $message) => "<dd class='pt-1'>$message</dd>", $messages);
+        $map = array_map(fn (string $message) => "<dd class='pt-1'>$message</dd>", $messages);
         $list = implode('', $map);
 
         $html = "

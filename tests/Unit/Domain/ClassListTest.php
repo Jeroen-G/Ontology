@@ -17,9 +17,12 @@ final class ClassListTest extends TestCase
 
     public function test_it_can_extract_unique_attributes(): void
     {
-        $a = new #[Glossary('Foo bar')] class {};
-        $b = new #[Glossary('Bar foo')] class {};
-        $c = new #[ValueObject] class {};
+        $a = new #[Glossary('Foo bar')] class {
+        };
+        $b = new #[Glossary('Bar foo')] class {
+        };
+        $c = new #[ValueObject] class() {
+        };
 
         $list = new ClassList([
             $this->makeRecord($a),

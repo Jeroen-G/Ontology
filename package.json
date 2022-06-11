@@ -1,7 +1,7 @@
 {
     "lint-staged": {
         "*.php": [
-            "php vendor/bin/ecs check --fix --config=dev/easy-coding-standard.phpya"
+            "php vendor/bin/ecs check --fix --config=dev/easy-coding-standard.php"
         ]
     },
     "devDependencies": {

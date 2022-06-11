@@ -8,8 +8,8 @@ use Attribute;
 
 #[Attribute(
     Attribute::IS_REPEATABLE
-    |Attribute::TARGET_METHOD
-    |Attribute::TARGET_PROPERTY
+    | Attribute::TARGET_METHOD
+    | Attribute::TARGET_PROPERTY
 )]
 class PointOfInterest
 {

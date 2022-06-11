@@ -20,6 +20,29 @@ $ composer require jeroen-g/ontology
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
+## Contributing
+
+So you'd like to contribute? Awesome! Here is a (incomplete) list of things on the roadmap that you could start a PR on,
+but feel free to suggest anything else!
+
+- [ ] Dockerfile
+- [ ] Ahoy/Makefile
+- [ ] More attributes, such as:
+    - [ ] Tag
+    - [ ] SideEffect, SideEffectFree
+    - [ ] Highlight
+    - [ ] Bankrupt
+    - [ ] BoundedContext
+    - [ ] Factory
+    - [ ] DataTransferObject
+    - [ ] Command
+    - [ ] Query
+- [ ] Testing helpers, such as:
+    - [ ] Get all classes with given attribute
+    - [ ] Get all (DDD) attributes for a given class
+- More validators for all attributes, based on widely agreed conventions (e.g. value objects should have no setters)
+- Does this work with custom, from outside the package, DDD attributes?
+
 ## Credits
 
 - [Jeroen](https://github.com/jeroen-g)

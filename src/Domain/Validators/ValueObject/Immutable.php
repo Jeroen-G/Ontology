@@ -7,7 +7,6 @@ namespace JeroenG\Ontology\Domain\Validators\ValueObject;
 use JeroenG\Ontology\Domain\Attributes\ValueObject;
 use JeroenG\Ontology\Domain\Record;
 use JeroenG\Ontology\Domain\Validators\ValidatorInterface;
-use ReflectionClass;
 
 final class Immutable implements ValidatorInterface
 {

@@ -90,7 +90,7 @@ final class GuidedTour implements GeneratorInterface
         foreach ($class->getMethods() as $method) {
             foreach ($method->getAttributes(PointOfInterest::class) as $methodAttribute) {
                 $pointsOfInterest[] = [
-                    'location' => $record->name.'::'.$method->getName().'()',
+                    'location' => $record->name . '::' . $method->getName() . '()',
                     'name' => $methodAttribute->newInstance()->getDescription(),
                 ];
             }
@@ -99,7 +99,7 @@ final class GuidedTour implements GeneratorInterface
         foreach ($class->getProperties() as $property) {
             foreach ($property->getAttributes(PointOfInterest::class) as $propertyAttribute) {
                 $pointsOfInterest[] = [
-                    'location' => '$'.$property->getName().' = '.($property->getDefaultValue() ?? 'null'),
+                    'location' => '$' . $property->getName() . ' = ' . ($property->getDefaultValue() ?? 'null'),
                     'name' => $propertyAttribute->newInstance()->getDescription(),
                     'order' => $propertyAttribute->newInstance()->getOrder(),
                 ];

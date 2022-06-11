@@ -14,7 +14,8 @@ final class WwwTest extends TestCase
 
     public function test_a_class_can_have_external_links(): void
     {
-        $class = new #[Www('Foo bar', 'https://youtu.be/dQw4w9WgXcQ')] class {};
+        $class = new #[Www('Foo bar', 'https://youtu.be/dQw4w9WgXcQ')] class {
+        };
         $attr = self::getAttributeFromClass($class, Www::class);
 
         self::assertAttributeExists($class, Www::class);

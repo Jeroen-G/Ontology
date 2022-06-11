@@ -18,7 +18,7 @@ final class GeneratorRegistry
 
     public function all(): array
     {
-        return array_map(fn(string $g) => $this->init($g), $this->generators);
+        return array_map(fn (string $g) => $this->init($g), $this->generators);
     }
 
     private function init(string $generatorClass): GeneratorInterface

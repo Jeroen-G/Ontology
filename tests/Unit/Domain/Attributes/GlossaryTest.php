@@ -14,7 +14,8 @@ final class GlossaryTest extends TestCase
 
     public function test_a_class_can_have_summary_for_glossary(): void
     {
-        $class = new #[Glossary('Foo bar')] class {};
+        $class = new #[Glossary('Foo bar')] class {
+        };
         $attr = self::getAttributeFromClass($class, Glossary::class);
 
         self::assertAttributeExists($class, Glossary::class);

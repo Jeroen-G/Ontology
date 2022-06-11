@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace JeroenG\Ontology\Tests\Support;
 
-use Roave\BetterReflection\Reflection\ReflectionAttribute;
-use Roave\BetterReflection\Reflection\ReflectionClass;
-
 use function PHPUnit\Framework\assertContains;
+use Roave\BetterReflection\Reflection\ReflectionAttribute;
+
+use Roave\BetterReflection\Reflection\ReflectionClass;
 
 trait AttributeHandling
 {
@@ -50,7 +50,7 @@ trait AttributeHandling
     public static function assertAttributeExists(string|object $class, string $attribute): void
     {
         $attributeNames = array_map(
-            fn(ReflectionAttribute $refAttr) => $refAttr->getName(),
+            fn (ReflectionAttribute $refAttr) => $refAttr->getName(),
             self::getAttributesFromClass($class)
         );
 

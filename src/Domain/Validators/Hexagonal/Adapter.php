@@ -17,7 +17,7 @@ final class Adapter implements ValidatorInterface, ConfigurableInterface
 {
     public function __construct(
         private Configuration $configuration,
-    ){
+    ) {
     }
 
     public function supports(string $type): bool
@@ -30,7 +30,7 @@ final class Adapter implements ValidatorInterface, ConfigurableInterface
         $reflectionClass = $record->reflectionClass;
         $namespace = $reflectionClass->getNamespaceName();
 
-        if(!$this->configuration->isInfrastructureLayer($namespace)) {
+        if (!$this->configuration->isInfrastructureLayer($namespace)) {
             return false;
         }
 
@@ -58,7 +58,7 @@ final class Adapter implements ValidatorInterface, ConfigurableInterface
     {
         foreach ($interface->getAttributes() as $attribute) {
             $name = $attribute->getName();
-            if ($name === PortAttribute::class || $name === RepositoryAttribute::class ) {
+            if ($name === PortAttribute::class || $name === RepositoryAttribute::class) {
                 return true;
             }
         }

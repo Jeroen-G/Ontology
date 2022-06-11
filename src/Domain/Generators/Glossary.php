@@ -31,7 +31,7 @@ final class Glossary implements GeneratorInterface
             $glossary = $this->extractGlossary($record);
             $summary = $glossary->getSummary();
             $title = $record->reflectionClass->getName();
-            $text = "### $title\n$summary";
+            $text = "### $title\n$summary\n\n";
 
             $file->append($text);
         }

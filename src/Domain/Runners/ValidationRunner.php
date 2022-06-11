@@ -52,6 +52,6 @@ final class ValidationRunner implements ValidationRunnerInterface
     /** @return ValidatorInterface[] */
     private function getValidatorsForType(string $type): array
     {
-        return array_filter($this->validators, fn(ValidatorInterface $v) => $v->supports($type));
+        return array_filter($this->validators, fn (ValidatorInterface $v) => $v->supports($type));
     }
 }

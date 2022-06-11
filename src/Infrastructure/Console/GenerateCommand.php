@@ -65,10 +65,10 @@ class GenerateCommand extends Command
         // Brace yourselves, incoming embarrassing quickfix
         if ($input->getOption('public')) {
             $packageFrom = realpath(NextPathSource::getPath());
-            $docs = getcwd().'/docs';
-            $publicFolder = $docs.'/public';
-            $temp = getcwd().'/docs-temp';
-            $publicDocs = $publicFolder.'/_docs';
+            $docs = getcwd() . '/docs';
+            $publicFolder = $docs . '/public';
+            $temp = getcwd() . '/docs-temp';
+            $publicDocs = $publicFolder . '/_docs';
 
             shell_exec("rm -rf $publicFolder");
             shell_exec("cp -r $docs/. $temp");
