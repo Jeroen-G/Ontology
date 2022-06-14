@@ -40,6 +40,7 @@ but feel free to suggest anything else!
 - [ ] Testing helpers, such as:
     - [ ] Get all classes with given attribute
     - [ ] Get all (DDD) attributes for a given class
+    - protip: https://github.com/thephpleague/construct-finder
 - More validators for all attributes, based on widely agreed conventions (e.g. value objects should have no setters)
 - Does this work with custom, from outside the package, DDD attributes?
 
