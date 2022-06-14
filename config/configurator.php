@@ -11,6 +11,7 @@ return static function (ConfigurationConfigurator $configurator): ConfigurationC
             JeroenG\Ontology\Domain\Validators\ValueObject\Immutable::class,
         ])
         ->setGenerators([
+            JeroenG\Ontology\Domain\Generators\Bibliography::class,
             JeroenG\Ontology\Domain\Generators\Glossary::class,
         ])
     ;
