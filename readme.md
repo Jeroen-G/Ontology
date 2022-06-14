@@ -28,12 +28,12 @@ but feel free to suggest anything else!
 - [ ] Dockerfile
 - [ ] Ahoy/Makefile
 - [ ] More attributes, such as:
-    - [ ] Tag
+    - [x] Tag
     - [ ] SideEffect, SideEffectFree
-    - [ ] Highlight
-    - [ ] Bankrupt
-    - [ ] BoundedContext
-    - [ ] Factory
+    - [x] Highlight
+    - [x] Bankrupt
+    - [x] BoundedContext
+    - [x] Factory
     - [ ] DataTransferObject
     - [ ] Command
     - [ ] Query
