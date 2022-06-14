@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace JeroenG\Ontology\Domain\Generators;
 
 use JeroenG\Ontology\Domain\Record;
 use Webmozart\Assert\Assert;
 
-trait ExtractorTrait {
+trait ExtractorTrait
+{
     private function extractAttribute(string $attribute, Record $record): array
     {
         $class = new \ReflectionClass($record->name);

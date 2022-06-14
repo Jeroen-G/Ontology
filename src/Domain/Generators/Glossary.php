@@ -40,7 +40,7 @@ final class Glossary implements GeneratorInterface
                 $text .= "\n\nMore information: $link";
             }
 
-            $file->append($text."\n\n");
+            $file->append($text . "\n\n");
         }
 
         return new Directory('', [$file]);
@@ -60,7 +60,7 @@ final class Glossary implements GeneratorInterface
         foreach ($attributes as $attribute) {
             /** @var Link $instance */
             $instance = $attribute->newInstance();
-            $links .= "\n- ".$instance->getLink();
+            $links .= "\n- " . $instance->getLink();
         }
 
         return $links;

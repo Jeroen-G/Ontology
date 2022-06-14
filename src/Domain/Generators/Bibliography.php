@@ -34,7 +34,7 @@ final class Bibliography implements GeneratorInterface
             $links = $this->extractLinks($record);
             $text .= $links;
 
-            $file->append($text."\n\n");
+            $file->append($text . "\n\n");
         }
 
         return new Directory('', [$file]);
@@ -55,11 +55,9 @@ final class Bibliography implements GeneratorInterface
                 $link = $instance->getLink();
             }
 
-            $links .= "- ".$link."\n";
+            $links .= "- " . $link . "\n";
         }
 
         return $links;
     }
-
-
 }

@@ -88,7 +88,7 @@ final class GuidedTour implements GeneratorInterface
         $pointsOfInterest = [];
 
         foreach ($class->getMethods() as $method) {
-            $returnType = $method->getReturnType() ? ': '.$method->getReturnType()->getName() : '';
+            $returnType = $method->getReturnType() ? ': ' . $method->getReturnType()->getName() : '';
             foreach ($method->getAttributes(PointOfInterest::class) as $methodAttribute) {
                 $pointsOfInterest[] = [
                     'location' => $record->name . '::' . $method->getName() . '()' . $returnType,
